@@ -5,8 +5,17 @@ from typing import List, Dict
 import json
 
 class AssutaOncologyRAG:
+    """
+    A Retrieval-Augmented Generation system for Assuta Oncology information.
+
+    This class orchestrates the process of receiving a user query, retrieving
+    relevant medical information from a specialized vector store, and generating
+    a comprehensive, context-aware answer using an OpenAI language model.
+    It is configured with a system prompt that defines its persona as an Assuta
+    oncology expert and includes security measures to prevent prompt injection.
+    """
     def __init__(self):
-        # Initialize OpenAI client
+        """Initializes the AssutaOncologyRAG system."""
         from dotenv import load_dotenv
         load_dotenv()
         
@@ -239,3 +248,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
