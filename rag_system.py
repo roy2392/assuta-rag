@@ -51,7 +51,17 @@ class AssutaOncologyRAG:
 """
     
     def retrieve_relevant_content(self, query: str, n_results: int = 5) -> List[Dict]:
-        """Retrieve relevant documents from vector store"""
+        """
+        Retrieves relevant documents from the vector store based on the user's query.
+
+        Args:
+            query (str): The user's question in Hebrew.
+            n_results (int): The maximum number of documents to retrieve.
+
+        Returns:
+            List[Dict]: A list of dictionaries, where each dictionary represents
+                        a relevant document chunk.
+        """
         return self.vector_store.search(query, n_results)
     
     def format_context(self, retrieved_docs: List[Dict]) -> tuple[str, List[Dict]]:
