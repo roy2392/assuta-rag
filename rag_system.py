@@ -65,7 +65,17 @@ class AssutaOncologyRAG:
         return self.vector_store.search(query, n_results)
     
     def format_context(self, retrieved_docs: List[Dict]) -> tuple[str, List[Dict]]:
-        """Format retrieved documents into context for the LLM and return citation info"""
+        """
+        Formats the retrieved documents into a context string for the LLM
+        and prepares citation information.
+
+        Args:
+            retrieved_docs (List[Dict]): A list of document chunks from the vector store.
+
+        Returns:
+            tuple[str, List[Dict]]: A tuple containing the formatted context string
+                                     and a list of citation dictionaries.
+        """
         if not retrieved_docs:
             return "לא נמצא מידע רלוונטי במאגר המסמכים של אסותא.", []
         
